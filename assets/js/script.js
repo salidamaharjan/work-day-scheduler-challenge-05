@@ -4,10 +4,12 @@
 $(function () {
   // locating the div with class container-lg
   var $mainContainer = $(".container-lg");
-  function creatingRow() {
+
+  function creatingRow(hour) {
     //creating a variable to store the row which has three column
-    var $row = $(`<div id="hour-9" class="row time-block past">
-  <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+    //using string interpolation to add the hour passed when called
+    var $row = $(`<div id="hour-${hour}" class="row time-block past">
+  <div class="col-2 col-md-1 hour text-center py-3">${hour}</div>
   <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
   <button class="btn saveBtn col-2 col-md-1" aria-label="save">
     <i class="fas fa-save" aria-hidden="true"></i>
