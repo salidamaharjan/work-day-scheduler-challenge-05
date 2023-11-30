@@ -9,7 +9,9 @@ $(function () {
     //creating a variable to store the row which has three column
     //using string interpolation to add the hour passed when called
     var $row = $(`<div id="hour-${hour}" class="row time-block past">
-  <div class="col-2 col-md-1 hour text-center py-3">${hour}</div>
+  <div class="col-2 col-md-1 hour text-center py-3">${
+    hour + isAmOrPM(hour)
+  }</div>
   <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
   <button class="btn saveBtn col-2 col-md-1" aria-label="save">
     <i class="fas fa-save" aria-hidden="true"></i>
