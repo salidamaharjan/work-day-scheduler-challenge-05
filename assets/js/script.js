@@ -37,11 +37,11 @@ $(function () {
   }
   //I want to change military time to normal time
   function displayTime(hour) {
+    var time = hour;
     if (hour <= 12) {
-      var time = hour;
       return time;
     } else {
-      var time = hour - 12;
+      time = time - 12;
       return time;
     }
   }
@@ -49,8 +49,8 @@ $(function () {
 
   //need to change the color according to the current time
   function isPastPresentFuture(comparedHour) {
-    var dayFormat = dayjs().format("HH");
-    console.log(dayFormat);
+    var dayFormat = parseInt(dayjs().format("HH"));
+    console.log(typeof dayFormat);
     if (comparedHour < dayFormat) {
       return "past";
     } else if (comparedHour > dayFormat) {
