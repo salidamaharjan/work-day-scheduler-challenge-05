@@ -41,6 +41,19 @@ $(function () {
   }
   console.log(displayTime(14));
 
+  //need to change the color according to the current time
+  function isPastPresentFuture(hour, amOrPm) {
+    var comparedHour = hour + amOrPm;
+    var dayFormat = dayjs().format("h A");
+    if (comparedHour === dayFormat) {
+      return "present";
+    } else if (comparedHour < dayFormat) {
+      return "past";
+    } else {
+      return "future";
+    }
+  }
+
   //I want to create 9 rows so using for loop
   for (var i = 9; i < 18; i++) {
     creatingRow(i);
