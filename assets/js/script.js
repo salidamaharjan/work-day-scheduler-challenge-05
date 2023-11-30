@@ -5,6 +5,10 @@ $(function () {
   // locating the div with class container-lg
   var $mainContainer = $(".container-lg");
 
+  //displaying current date on the header
+  var $pTag = $("#currentDay");
+  $pTag.append(dayjs().format("dddd, MMMM D"));
+
   function creatingRow(hour) {
     //creating a variable to store the row which has three column
     //using string interpolation to add the hour passed when called
