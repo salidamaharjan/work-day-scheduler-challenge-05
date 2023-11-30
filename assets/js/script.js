@@ -8,10 +8,12 @@ $(function () {
   function creatingRow(hour) {
     //creating a variable to store the row which has three column
     //using string interpolation to add the hour passed when called
-    var $row = $(`<div id="hour-${hour}" class="row time-block past">
-  <div class="col-2 col-md-1 hour text-center py-3">${
-    displayTime(hour) + isAmOrPM(hour)
-  }</div>
+    var displayTimeAmPm = displayTime(hour) + isAmOrPM(hour);
+    var $row =
+      $(`<div id="hour-${hour}" class="row time-block ${isPastPresentFuture(
+        hour
+      )}">
+  <div class="col-2 col-md-1 hour text-center py-3">${displayTimeAmPm}</div>
   <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
   <button class="btn saveBtn col-2 col-md-1" aria-label="save">
     <i class="fas fa-save" aria-hidden="true"></i>
@@ -42,15 +44,15 @@ $(function () {
   console.log(displayTime(14));
 
   //need to change the color according to the current time
-  function isPastPresentFuture(hour, amOrPm) {
-    var comparedHour = hour + amOrPm;
-    var dayFormat = dayjs().format("h A");
-    if (comparedHour === dayFormat) {
-      return "present";
-    } else if (comparedHour < dayFormat) {
+  function isPastPresentFuture(comparedHour) {
+    var dayFormat = dayjs().format("HH");
+    console.log(dayFormat);
+    if (comparedHour < dayFormat) {
       return "past";
-    } else {
+    } else if (comparedHour > dayFormat) {
       return "future";
+    } else {
+      return "present";
     }
   }
 
