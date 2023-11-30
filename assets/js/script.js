@@ -10,7 +10,7 @@ $(function () {
     //using string interpolation to add the hour passed when called
     var $row = $(`<div id="hour-${hour}" class="row time-block past">
   <div class="col-2 col-md-1 hour text-center py-3">${
-    hour + isAmOrPM(hour)
+    displayTime(hour) + isAmOrPM(hour)
   }</div>
   <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
   <button class="btn saveBtn col-2 col-md-1" aria-label="save">
@@ -30,7 +30,7 @@ $(function () {
     }
   }
   //I want to change military time to normal time
-  function changeTime(hour) {
+  function displayTime(hour) {
     if (hour <= 12) {
       var time = hour;
       return time;
@@ -39,7 +39,7 @@ $(function () {
       return time;
     }
   }
-  console.log(changeTime(14));
+  console.log(displayTime(14));
 
   //I want to create 9 rows so using for loop
   for (var i = 9; i < 18; i++) {
