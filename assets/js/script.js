@@ -29,6 +29,18 @@ $(function () {
       return "PM";
     }
   }
+  //I want to change military time to normal time
+  function changeTime(hour) {
+    if (hour <= 12) {
+      var time = hour;
+      return time;
+    } else {
+      var time = hour - 12;
+      return time;
+    }
+  }
+  console.log(changeTime(14));
+
   //I want to create 9 rows so using for loop
   for (var i = 9; i < 18; i++) {
     creatingRow(i);
