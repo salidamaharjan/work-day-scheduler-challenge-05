@@ -17,7 +17,10 @@ $(function () {
     //adding the a row to the main div
     $mainContainer.append($row);
   }
-  creatingRow();
+  //I want to create 9 rows so using for loop
+  for (var i = 0; i < 9; i++) {
+    creatingRow(i);
+  }
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
