@@ -20,7 +20,7 @@ $(function () {
     $mainContainer.append($row);
   }
   //I want to create 9 rows so using for loop
-  for (var i = 0; i < 9; i++) {
+  for (var i = 9; i < 18; i++) {
     creatingRow(i);
   }
   // TODO: Add a listener for click events on the save button. This code should
