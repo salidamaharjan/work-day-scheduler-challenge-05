@@ -18,16 +18,16 @@ $(function () {
   </button>
 </div> 
 `);
-    //want to add AM and PM to the displayed time
-    function isAmOrPM(hour) {
-      if (hour < 12) {
-        return "AM";
-      } else {
-        return "PM";
-      }
-    }
     //adding the a row to the main div
     $mainContainer.append($row);
+  }
+  //want to add AM and PM to the displayed time
+  function isAmOrPM(hour) {
+    if (hour < 12) {
+      return "AM";
+    } else {
+      return "PM";
+    }
   }
   //I want to create 9 rows so using for loop
   for (var i = 9; i < 18; i++) {
