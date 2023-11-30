@@ -4,9 +4,9 @@
 $(function () {
   // locating the div with class container-lg
   var $mainContainer = $(".container-lg");
-
-  //creating a variable to store the row which has three column
-  var $row = $(`<div id="hour-9" class="row time-block past">
+  function creatingRow() {
+    //creating a variable to store the row which has three column
+    var $row = $(`<div id="hour-9" class="row time-block past">
   <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
   <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
   <button class="btn saveBtn col-2 col-md-1" aria-label="save">
@@ -14,9 +14,10 @@ $(function () {
   </button>
 </div> 
 `);
-  //adding the a row to the main div
-  $mainContainer.append($row);
-
+    //adding the a row to the main div
+    $mainContainer.append($row);
+  }
+  creatingRow();
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
