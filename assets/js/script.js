@@ -40,6 +40,12 @@ $(function () {
     var $text = $row.find("textarea");
     var $saveBtn = $row.find(".saveBtn");
 
+    //when the page is refreshed onload function is called
+    if(location.reload){
+      onload(hour);
+      //displaying the stored value on the text area
+      $text.append(onload(hour));
+    }
     clickedSaveBtn($saveBtn, $text, hour);
     console.log("click save button called");
 
@@ -100,7 +106,12 @@ $(function () {
       console.log("exiting clickSaveButton function");
     });
   }
-
+  //a function when the page is reloaded
+  function onload(hour){
+    var hourTask = localStorage.getItem(hour+"-"+"task");
+    console.log(hourTask);
+    return hourTask;
+  }
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
