@@ -7,7 +7,7 @@ $(function () {
 
   //displaying current date on the header
   var $pTag = $("#currentDay");
-  $pTag.append(dayjs().format("dddd, MMMM D"));
+  $pTag.append(dayjs().format("dddd, MMMM Do"));
 
   // I want to create 9 rows so using for loop
   for (var i = 9; i < 18; i++) {
@@ -70,8 +70,8 @@ $(function () {
       return "present";
     }
   }
-  function clickedSaveBtn ($btn) {
-    $btn.on("click", function() {
+  function clickedSaveBtn($btn) {
+    $btn.on("click", function () {
       alert("You clicked me");
     });
   }
