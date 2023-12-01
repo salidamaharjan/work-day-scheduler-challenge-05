@@ -13,7 +13,7 @@ $(function () {
   console.log("$pTag.append(dayjs()");
 
   // I want to create 9 rows so using for loop
-  for (var i = 9; i < 10; i++) {
+  for (var i = 9; i < 18; i++) {
     console.log("entering for loop");
     creatingRow(i);
     console.log("exiting for loop");
@@ -43,6 +43,7 @@ $(function () {
     //when the page is refreshed onload function is called
     if(location.reload){
       onload(hour);
+      console.log("line 46 ->",onload(hour));
       //displaying the stored value on the text area
       $text.append(onload(hour));
     }
@@ -78,7 +79,7 @@ $(function () {
       return time;
     }
   }
-  console.log(displayTime(14));
+  console.log("to check the function display time is working or not->",displayTime(14));
 
   //need to change the color according to the current time
   function isPastPresentFuture(comparedHour) {
@@ -109,7 +110,7 @@ $(function () {
   //a function when the page is reloaded
   function onload(hour){
     var hourTask = localStorage.getItem(hour+"-"+"task");
-    console.log(hourTask);
+    console.log("inside the onload function ->", hourTask);
     return hourTask;
   }
   // TODO: Add a listener for click events on the save button. This code should
