@@ -8,11 +8,12 @@ $(function () {
   //displaying current date on the header
   var $pTag = $("#currentDay");
   $pTag.append(dayjs().format("dddd, MMMM D"));
-  
-  //I want to create 9 rows so using for loop
+
+  // I want to create 9 rows so using for loop
   for (var i = 9; i < 18; i++) {
     creatingRow(i);
   }
+
   function creatingRow(hour) {
     //creating a variable to store the row which has three column
     //using string interpolation to add the hour passed when called
@@ -28,9 +29,14 @@ $(function () {
   </button>
 </div> 
 `);
+
+    // finding a button created in a row
+    var saveBtn = $row.find(".saveBtn");
+
     //adding the a row to the main div
     $mainContainer.append($row);
   }
+
   //want to add AM and PM to the displayed time
   function isAmOrPM(hour) {
     if (hour < 12) {
@@ -64,7 +70,6 @@ $(function () {
     }
   }
 
-  
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
