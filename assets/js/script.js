@@ -13,7 +13,7 @@ $(function () {
   console.log("$pTag.append(dayjs()");
 
   // I want to create 9 rows so using for loop
-  for (var i = 0; i < 18; i++) {
+  for (var i = 9; i < 10; i++) {
     console.log("entering for loop");
     creatingRow(i);
     console.log("exiting for loop");
