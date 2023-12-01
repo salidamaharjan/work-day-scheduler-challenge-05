@@ -31,7 +31,8 @@ $(function () {
 `);
 
     // finding a button created in a row
-    var saveBtn = $row.find(".saveBtn");
+    var $saveBtn = $row.find(".saveBtn");
+    clickedSaveBtn($saveBtn);
 
     //adding the a row to the main div
     $mainContainer.append($row);
@@ -68,6 +69,11 @@ $(function () {
     } else {
       return "present";
     }
+  }
+  function clickedSaveBtn ($btn) {
+    $btn.on("click", function() {
+      alert("You clicked me");
+    });
   }
 
   // TODO: Add a listener for click events on the save button. This code should
