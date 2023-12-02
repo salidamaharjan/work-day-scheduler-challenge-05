@@ -33,11 +33,8 @@ $(function () {
     var $text = $row.find("textarea");
     var $saveBtn = $row.find(".saveBtn");
 
-    //retrieving data from local storage
-    getFromLocalStorage(hour);
-
     //displaying the stored value on the text area
-    $text.append(getFromLocalStorage(hour));
+    $text.val(getFromLocalStorage(hour));
 
     clickedSaveBtn($saveBtn, $text, hour);
 
