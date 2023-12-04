@@ -1,4 +1,9 @@
 # Work Day Scheduler
+
+**[Work Day Scheduler](https://salidamaharjan.github.io/work-day-scheduler-challenge-05/)**
+
+**[GitHub Repo Link](https://github.com/salidamaharjan/work-day-scheduler-challenge-05)**
+
 ## Description
 * This project builds an hourly scheduler, where the user can add their plan or schedule.
 * The top of the page displays the current date for the user to build their schedule for the day.
